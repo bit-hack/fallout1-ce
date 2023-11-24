@@ -2362,7 +2362,7 @@ static int db_hash_string_to_key(const char* path, int sep, unsigned int* key_pt
         filename = copy;
     }
 
-    for (index = 0; index < strlen(filename); index++) {
+    for (index = strlen(filename); index--;) {
         key *= *filename++;
         key &= 0x7FFFFFFF;
     }
